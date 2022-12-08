@@ -5,3 +5,14 @@
 g = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'
 br = branch
 co = checkout
+
+git checkout -- <filename> - отмена изменений в непопавшем в индекс файле.
+git checkout -- . отмена изменений во всех файлах не попавших в индекс.
+
+git reset <filename> - удаление файла из индекса (git add).
+git reset . удаление всех измененных файлов попавших в виндекс.
+(после можно применить git checkout -- . для удаления всех изменений.)
+
+git reset --hard HEAD^1 удалить одно(HEAD^1) закоммиченное изменение вообще 
+git reset --soft HEAD^1 удалить изменение только из коммита (потом убрать из индекса(git reset .) и вообще удалить изменения (git checkout -- .))
+
